@@ -1,26 +1,25 @@
 # Scripts v1
 
-Reusable operator scripts for AnarchI Technologies experiments and workflows.
+Reviewed operator-script staging area for AnarchI Technologies.
 
 Hardcoding freedom into the systems of tomorrow.
 
 ## Purpose
 
-Scripts v1 is a staging area for useful automation that has not yet earned its own product repository. It should stay organized enough that a useful script can graduate into a tested module instead of becoming mystery glue.
+Scripts v1 is no longer a binary dump. It is a controlled staging area where scripts must be documented, risk-labeled, and dry-run aware before graduating into product repos.
 
-## Current Structure
+## What Changed
 
-```text
-Scripts/
+- Removed committed virtualenv/package-manager `.exe` shims.
+- Added a script registry validator.
+- Added tests for documentation and dry-run rules.
+
+## Verify
+
+```bash
+python -m unittest discover -s tests -q
 ```
 
-## Repository Rules
+## Public Safety
 
-- Every script should explain its purpose, inputs, outputs, and risk level.
-- Write-capable scripts need dry-run behavior where practical.
-- Private credentials, session files, and machine-specific dumps do not belong here.
-- Scripts that become core infrastructure should move into a dedicated repo.
-
-## Production Direction
-
-Add a script index, usage examples, and smoke tests as the collection grows.
+Do not commit generated executables, virtual environments, credentials, local cache files, browser state, or high-risk write scripts without dry-run support.
